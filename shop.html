@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="فروشگاه اینترنتی مدرن و مینیمال">
+<title>lior shop | فروشگاه آنلاین</title>
+
+<style>
+/* =========================
+   RESET + VARIABLES
+========================= */
+@font-face{
+  font-family:IRANSansCustom;
+  src:local("IRANSansX"),local("IRANSans"),local("IRANSansWeb");
+  font-display:swap;
+}
+:root{
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --surface-2:#f1f6f5;
+  --text:#101817;
+  --muted:#617270;
+  --border:#dfe9e7;
+  --primary:#1B7F7A;
+  --primary-2:#2a9b95;
+  --teal:#1B7F7A;
+  --danger:#d9365e;
+  --shadow:0 20px 60px rgba(27,127,122,.12);
+  --radius:24px;
+  --max:1180px;
+}
+body.dark{
+  --bg:#000000;
+  --surface:#080b0c;
+  --surface-2:#101617;
+  --text:#f4ffff;
+  --muted:#9bb1b3;
+  --border:#1c2b2d;
+  --primary:#00C1D4;
+  --primary-2:#00a9ba;
+  --teal:#00C1D4;
+  --shadow:0 20px 60px rgba(0,193,212,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:IRANSansCustom,Tahoma,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
+  transition:background .3s,color .3s;
+}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(var(--max),calc(100% - 36px));margin:auto}
+
+/* =========================
+   HEADER
+========================= */
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:1.2rem;
+  font-weight:900;
+}
+.logo-mark{
+  width:41px;height:41px;
+  display:grid;place-items:center;
+  color:white;
+  border-radius:13px;
+  background:linear-gradient(135deg,var(--primary),var(--teal));
+  box-shadow:0 9px 25px rgba(108,92,231,.28);
+}
+.nav-links{
+  display:flex;
+  gap:26px;
+  color:var(--muted);
+  font-size:.94rem;
+}
+.nav-links a{transition:.25s}
+.nav-links a:hover{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:42px;height:42px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  background:var(--surface);
+  color:var(--text);
+  display:grid;
+  place-items:center;
+  transition:.25s;
+}
+.icon-btn:hover{
+  transform:translateY(-2px);
+  border-color:var(--primary);
+  color:var(--primary);
+}
+.cart-btn{position:relative}
+.cart-count{
+  position:absolute;
+  top:-5px;left:-5px;
+  min-width:18px;height:18px;
+  padding:0 4px;
+  border-radius:50px;
+  display:grid;place-items:center;
+  background:var(--danger);
+  color:white;
+  font-size:.65rem;
+  font-weight:bold;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:88px 0 72px;
+}
+.hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  filter:blur(5px);
+  z-index:-1;
+}
+.hero::before{
+  width:440px;height:440px;
+  top:-210px;right:-100px;
+  background:rgba(27,127,122,.12);
+}
+.hero::after{
+  width:360px;height:360px;
+  bottom:-180px;left:-80px;
+  background:rgba(27,127,122,.10);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:65px;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 13px;
+  border-radius:99px;
+  color:var(--primary);
+  background:color-mix(in srgb,var(--primary) 10%,transparent);
+  font-size:.83rem;
+  font-weight:800;
+}
+.eyebrow::before{
+  content:"";
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--teal);
+  box-shadow:0 0 0 5px rgba(18,184,166,.10);
+}
+.hero h1{
+  font-size:clamp(2.5rem,5vw,4.8rem);
+  line-height:1.16;
+  letter-spacing:-2px;
+  margin:19px 0;
+}
+.gradient{
+  background:linear-gradient(100deg,var(--primary),var(--teal));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero-text{
+  max-width:610px;
+  color:var(--muted);
+  font-size:1.05rem;
+}
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.btn{
+  border:0;
+  border-radius:14px;
+  padding:12px 20px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-weight:800;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{
+  color:white;
+  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  box-shadow:0 12px 30px rgba(108,92,231,.25);
+}
+.btn-secondary{
+  color:var(--text);
+  background:var(--surface);
+  border:1px solid var(--border);
+}
+.hero-visual{
+  min-height:440px;
+  position:relative;
+  overflow:hidden;
+  border-radius:34px;
+  background:linear-gradient(145deg,#050707,#10191a);
+  box-shadow:var(--shadow);
+}
+.hero-visual::before{
+  content:"";
+  position:absolute;
+  width:280px;height:280px;
+  border-radius:50%;
+  background:#00C1D4;
+  filter:blur(80px);
+  opacity:.40;
+  top:-70px;right:-80px;
+}
+.hero-visual::after{
+  content:"";
+  position:absolute;
+  width:230px;height:230px;
+  border-radius:50%;
+  background:#00C1D4;
+  filter:blur(80px);
+  opacity:.28;
+  bottom:-80px;left:-50px;
+}
+.product-orb{
+  position:absolute;
+  width:235px;height:235px;
+  top:95px;left:50%;
+  transform:translateX(-50%) rotate(-15deg);
+  border-radius:43% 57% 58% 42%;
+  background:linear-gradient(145deg,#aaa0ff,#6555d8 55%,#27203d);
+  box-shadow:inset -28px -25px 60px rgba(0,0,0,.3),
+             0 35px 70px rgba(0,0,0,.38);
+  z-index:2;
+}
+.visual-label{
+  position:absolute;
+  bottom:24px;right:24px;
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.09);
+  color:#fff;
+  border-radius:14px;
+  backdrop-filter:blur(12px);
+  z-index:3;
+  font-size:.82rem;
+}
+@keyframes float{
+  0%,100%{transform:translateX(-50%) translateY(0) rotate(-15deg)}
+  50%{transform:translateX(-50%) translateY(-15px) rotate(-10deg)}
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section{padding:76px 0}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:25px;
+  margin-bottom:28px;
+}
+.section-head h2{
+  font-size:2rem;
+  line-height:1.3;
+  margin-top:9px;
+}
+.section-head p{
+  max-width:580px;
+  color:var(--muted);
+}
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.product-card{
+  overflow:hidden;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(20,25,40,.04);
+  transition:.3s;
+}
+.product-card:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow);
+}
+.product-img{
+  height:220px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+  background:var(--surface-2);
+}
+.product-img .shape{
+  width:135px;height:135px;
+  border-radius:30px;
+  background:linear-gradient(135deg,var(--primary-2),var(--primary));
+  box-shadow:0 25px 45px rgba(70,60,180,.25);
+  transform:rotate(-10deg);
+  transition:.4s;
+}
+.product-card:hover .shape{
+  transform:rotate(0) scale(1.07);
+}
+.product-img.teal .shape{
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--primary));
+}
+.product-img.orange .shape{
+  border-radius:20px 60px 20px 60px;
+  background:linear-gradient(135deg,var(--primary-2),var(--primary));
+}
+.product-img.pink .shape{
+  border-radius:60px 20px;
+  background:linear-gradient(135deg,var(--teal),var(--primary));
+}
+.badge{
+  position:absolute;
+  top:13px;right:13px;
+  padding:4px 9px;
+  border-radius:99px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  font-size:.7rem;
+  font-weight:800;
+}
+.product-body{padding:17px}
+.product-body h3{
+  font-size:1rem;
+  margin-bottom:5px;
+}
+.product-body p{
+  min-height:48px;
+  color:var(--muted);
+  font-size:.8rem;
+}
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:12px;
+}
+.price{
+  font-weight:900;
+  font-size:1.03rem;
+}
+.price small{
+  color:var(--muted);
+  font-size:.68rem;
+  font-weight:500;
+}
+.add-btn{
+  width:39px;height:39px;
+  border:0;
+  border-radius:12px;
+  background:var(--surface-2);
+  color:var(--primary);
+  font-size:1.25rem;
+  transition:.25s;
+}
+.add-btn:hover{
+  background:var(--primary);
+  color:#fff;
+}
+
+/* =========================
+   FEATURES
+========================= */
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.feature{
+  padding:24px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:22px;
+}
+.feature-icon{
+  width:48px;height:48px;
+  border-radius:15px;
+  display:grid;place-items:center;
+  background:var(--surface-2);
+  color:var(--primary);
+  font-size:1.3rem;
+  margin-bottom:14px;
+}
+.feature h3{font-size:1rem;margin-bottom:5px}
+.feature p{font-size:.83rem;color:var(--muted)}
+
+/* =========================
+   CTA
+========================= */
+.cta{
+  padding:36px;
+  border-radius:30px;
+  color:white;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(115deg,#171a25,#2c2443);
+}
+.cta::after{
+  content:"";
+  position:absolute;
+  width:220px;height:220px;
+  border-radius:50%;
+  left:-70px;bottom:-100px;
+  background:var(--teal);
+  filter:blur(65px);
+  opacity:.25;
+}
+.cta-content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.cta h2{font-size:1.8rem}
+.cta p{opacity:.7;margin-top:5px}
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+.filter-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:24px;
+}
+.filter{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--muted);
+  border-radius:99px;
+  padding:8px 15px;
+  transition:.2s;
+}
+.filter:hover,.filter.active{
+  color:#fff;
+  background:var(--primary);
+  border-color:var(--primary);
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:20px;
+}
+.contact-card{
+  padding:28px;
+  border-radius:var(--radius);
+  background:var(--surface);
+  border:1px solid var(--border);
+}
+.contact-card h2{margin-bottom:15px}
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px 0;
+  border-bottom:1px solid var(--border);
+}
+.contact-item:last-child{border-bottom:0}
+.contact-icon{
+  width:47px;height:47px;
+  flex:0 0 47px;
+  display:grid;place-items:center;
+  border-radius:14px;
+  color:var(--primary);
+  background:var(--surface-2);
+}
+.contact-item p{color:var(--muted);font-size:.82rem}
+.form{display:grid;gap:14px}
+.field{display:grid;gap:7px}
+.field label{font-size:.86rem;font-weight:800}
+.field input,.field textarea{
+  width:100%;
+  border:1px solid var(--border);
+  outline:none;
+  color:var(--text);
+  background:var(--surface-2);
+  border-radius:13px;
+  padding:12px 14px;
+  transition:.2s;
+}
+.field input:focus,.field textarea:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(108,92,231,.08);
+}
+.field textarea{min-height:145px;resize:vertical}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  margin-top:30px;
+  padding:30px 0;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+}
+.footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.social{display:flex;gap:8px}
+.social a{
+  width:39px;height:39px;
+  display:grid;place-items:center;
+  border:1px solid var(--border);
+  background:var(--surface);
+  border-radius:12px;
+  transition:.2s;
+}
+.social a svg{display:block}
+.social a:hover{
+  color:var(--primary);
+  transform:translateY(-2px);
+}
+
+/* =========================
+   CART PANEL
+========================= */
+.overlay{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  background:rgba(0,0,0,.45);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+}
+.overlay.open{
+  opacity:1;
+  pointer-events:auto;
+}
+.cart-panel{
+  position:fixed;
+  z-index:201;
+  top:0;left:0;
+  width:min(420px,92vw);
+  height:100vh;
+  padding:25px;
+  background:var(--surface);
+  border-right:1px solid var(--border);
+  transform:translateX(-100%);
+  transition:.35s;
+  display:flex;
+  flex-direction:column;
+}
+.cart-panel.open{transform:translateX(0)}
+.cart-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+.cart-items{flex:1;overflow:auto}
+.empty-cart{
+  color:var(--muted);
+  text-align:center;
+  margin-top:70px;
+}
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px 0;
+  border-bottom:1px solid var(--border);
+}
+.cart-thumb{
+  width:55px;height:55px;
+  border-radius:14px;
+  background:var(--surface-2);
+}
+.cart-item-info{flex:1}
+.cart-item-info strong{font-size:.85rem}
+.cart-item-info small{display:block;color:var(--muted)}
+.remove-item{
+  border:0;background:transparent;color:var(--danger);
+}
+.cart-footer{
+  padding-top:18px;
+  border-top:1px solid var(--border);
+}
+.total{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:13px;
+  font-weight:900;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+.reveal{
+}
+.delay-1{}
+.delay-2{}
+.delay-3{}
+@keyframes reveal{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:950px){
+  .hero-grid{grid-template-columns:1fr;gap:35px}
+  .hero-visual{min-height:390px}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .container{width:min(var(--max),calc(100% - 26px))}
+  .nav{height:68px}
+  .nav-links{display:none}
+  .hero{padding:58px 0 50px}
+  .hero h1{font-size:2.55rem;letter-spacing:-1px}
+  .hero-visual{min-height:340px}
+  .product-orb{width:180px;height:180px;top:75px}
+  .section{padding:55px 0}
+  .section-head{display:block}
+  .section-head p{margin-top:8px}
+  .products-grid{grid-template-columns:1fr}
+  .product-img{height:240px}
+  .features{grid-template-columns:1fr}
+  .cta-content{display:block}
+  .cta .btn{margin-top:18px}
+  .footer{display:block}
+  .social{margin-top:14px}
+}
+
+/* Phone-first product grid */
+@media (max-width: 600px){
+  .products-grid,
+  .product-grid,
+  .products{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:8px !important;
+  }
+  .product-card{
+    min-width:0 !important;
+    border-radius:14px !important;
+    padding:8px !important;
+  }
+  .product-card h3{
+    font-size:11px !important;
+    line-height:1.5 !important;
+    margin:6px 0 3px !important;
+  }
+  .product-card p{
+    font-size:9px !important;
+    line-height:1.45 !important;
+  }
+  .product-card .price{
+    font-size:11px !important;
+  }
+  .product-card .product-image,
+  .product-card .visual,
+  .product-card .thumb{
+    min-height:74px !important;
+    height:74px !important;
+  }
+  .product-card button{
+    font-size:9px !important;
+    padding:7px 5px !important;
+  }
+}
+
+
+
+/* Connected section navigation */
+.connected-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:18px auto 28px;
+  max-width:920px;
+  padding:8px 10px;
+  position:relative;
+  z-index:5;
+}
+.connected-nav a{
+  text-decoration:none;
+  color:var(--text);
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:12px;
+  transition:.2s ease;
+}
+.connected-nav a:hover{
+  color:var(--primary);
+  border-color:var(--primary);
+  transform:translateY(-2px);
+}
+.connected-nav .line{
+  width:18px;
+  height:1px;
+  background:var(--border);
+}
+@media(max-width:600px){
+  .connected-nav{gap:5px;margin:10px auto 22px}
+  .connected-nav a{font-size:10px;padding:7px 9px}
+  .connected-nav .line{width:8px}
+}
+
+
+
+
+.owner-nav-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  border:1px solid var(--primary);
+  color:var(--primary);
+  border-radius:999px;
+  padding:8px 13px;
+  font-size:12px;
+  font-weight:700;
+  transition:.2s ease;
+}
+.owner-nav-link:hover{
+  background:var(--primary);
+  color:#000 !important;
+  transform:translateY(-1px);
+}
+@media(max-width:600px){
+  .owner-nav-link{font-size:10px;padding:7px 9px}
+}
+
+
+/* Responsive owner button */
+.owner-nav-link{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative !important;
+  z-index:30 !important;
+}
+@media (max-width:700px){
+  header .header-inner{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    gap:7px !important;
+  }
+  header nav{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:100% !important;
+    order:3 !important;
+    gap:5px !important;
+  }
+  header nav a{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+  }
+  .owner-nav-link{
+    font-size:10px !important;
+    padding:7px 9px !important;
+  }
+}
+@media (max-width:380px){
+  header nav a{
+    font-size:9px !important;
+    padding:6px 7px !important;
+  }
+  .owner-nav-link{
+    font-size:9px !important;
+    padding:6px 7px !important;
+  }
+}
+
+</style>
+<style>
+@media(max-width:700px){.products-grid,.product-grid,.products{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}.product-card{min-width:0!important;padding:7px!important;border-radius:12px!important}.product-card h3{font-size:10px!important;line-height:1.35!important;margin:5px 0 2px!important}.product-card p{font-size:8px!important;line-height:1.35!important}.product-card .price{font-size:10px!important}.product-card .product-image,.product-card .visual,.product-card .thumb{min-height:62px!important;height:62px!important}.product-card button{font-size:8px!important;padding:6px 4px!important}}</style>
+<style>
+
+/* Fixed, clean mobile navigation */
+header{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  z-index:9999 !important;
+  margin:0 !important;
+}
+body{
+  padding-top:92px !important;
+}
+header .header-inner{
+  max-width:1200px !important;
+  margin:0 auto !important;
+  min-height:68px !important;
+  box-sizing:border-box !important;
+}
+header nav{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex-wrap:wrap !important;
+  gap:6px !important;
+}
+header nav a,
+.owner-nav-link{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  white-space:nowrap !important;
+  flex:0 0 auto !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+@media (max-width:700px){
+  body{padding-top:126px !important;}
+  header .header-inner{
+    min-height:112px !important;
+    padding:8px 10px !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-content:center !important;
+    justify-content:center !important;
+    gap:7px !important;
+  }
+  header nav{
+    width:100% !important;
+    order:3 !important;
+    gap:5px !important;
+  }
+  header nav a{
+    font-size:10px !important;
+    padding:7px 9px !important;
+  }
+  .owner-nav-link{
+    font-size:10px !important;
+    padding:7px 9px !important;
+  }
+}
+@media (max-width:380px){
+  body{padding-top:120px !important;}
+  header .header-inner{
+    min-height:106px !important;
+    padding:7px 6px !important;
+  }
+  header nav{
+    gap:4px !important;
+  }
+  header nav a,
+  .owner-nav-link{
+    font-size:9px !important;
+    padding:6px 7px !important;
+  }
+}
+
+</style>
+<style>
+
+/* Image logo */
+.logo{
+  display:flex !important;
+  align-items:center !important;
+  flex:0 0 auto !important;
+  gap:0 !important;
+}
+.logo-image{
+  display:block !important;
+  width:185px !important;
+  height:auto !important;
+  max-width:100% !important;
+  object-fit:contain !important;
+}
+.logo-mark{display:none !important;}
+
+@media (max-width:700px){
+  .logo-image{
+    width:145px !important;
+  }
+}
+@media (max-width:380px){
+  .logo-image{
+    width:125px !important;
+  }
+}
+
+</style>
+<style>
+
+/* =========================================================
+   FINAL HEADER / OWNER BUTTON RESPONSIVE FIX
+   Targets the actual .nav and .nav-links markup.
+========================================================= */
+.header{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  z-index:99999 !important;
+  box-sizing:border-box !important;
+}
+
+.header .nav{
+  min-height:74px !important;
+  height:auto !important;
+  box-sizing:border-box !important;
+}
+
+.owner-nav-link{
+  color:var(--primary) !important;
+  background:transparent !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+
+.owner-nav-link:hover,
+.owner-nav-link:focus-visible{
+  color:#000 !important;
+  background:var(--primary) !important;
+}
+
+body{
+  padding-top:78px !important;
+}
+
+/* Tablet / phone */
+@media (max-width:700px){
+  body{
+    padding-top:190px !important;
+  }
+
+  .header .nav{
+    width:100% !important;
+    min-height:0 !important;
+    padding:8px 10px 10px !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) auto !important;
+    grid-template-areas:
+      "logo actions"
+      "links links" !important;
+    align-items:center !important;
+    gap:9px 8px !important;
+  }
+
+  .header .logo{
+    grid-area:logo !important;
+    min-width:0 !important;
+    justify-self:start !important;
+    overflow:hidden !important;
+  }
+
+  .header .logo-image{
+    width:145px !important;
+    max-width:100% !important;
+    height:auto !important;
+  }
+
+  .header .nav-actions{
+    grid-area:actions !important;
+    justify-self:end !important;
+    display:flex !important;
+    align-items:center !important;
+    gap:5px !important;
+  }
+
+  .header .nav-actions .icon-btn{
+    width:36px !important;
+    height:36px !important;
+    flex:0 0 36px !important;
+  }
+
+  .header .nav-links{
+    grid-area:links !important;
+    width:100% !important;
+    min-width:0 !important;
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:6px !important;
+    align-items:stretch !important;
+    justify-items:stretch !important;
+    box-sizing:border-box !important;
+  }
+
+  .header .nav-links > a{
+    width:100% !important;
+    min-width:0 !important;
+    height:34px !important;
+    padding:5px 3px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    box-sizing:border-box !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+    font-size:10px !important;
+    border-radius:10px !important;
+  }
+
+  .header .nav-links > .owner-nav-link{
+    overflow:visible !important;
+    text-overflow:clip !important;
+    font-size:10px !important;
+    padding-left:2px !important;
+    padding-right:2px !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width:380px){
+  body{
+    padding-top:205px !important;
+  }
+
+  .header .nav{
+    padding:7px 7px 9px !important;
+    gap:8px 5px !important;
+  }
+
+  .header .logo-image{
+    width:125px !important;
+  }
+
+  .header .nav-actions .icon-btn{
+    width:33px !important;
+    height:33px !important;
+    flex-basis:33px !important;
+    font-size:13px !important;
+  }
+
+  .header .nav-links{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:5px !important;
+  }
+
+  .header .nav-links > a,
+  .header .nav-links > .owner-nav-link{
+    height:32px !important;
+    font-size:8.5px !important;
+    padding:4px 2px !important;
+  }
+}
+
+/* Ultra-small phones: give every navigation item enough room */
+@media (max-width:320px){
+  body{
+    padding-top:245px !important;
+  }
+
+  .header .nav{
+    grid-template-columns:1fr !important;
+    grid-template-areas:
+      "logo"
+      "actions"
+      "links" !important;
+    justify-items:center !important;
+  }
+
+  .header .logo{
+    justify-self:center !important;
+  }
+
+  .header .nav-actions{
+    justify-self:center !important;
+  }
+
+  .header .nav-links{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .header .nav-links > a,
+  .header .nav-links > .owner-nav-link{
+    height:34px !important;
+    font-size:9px !important;
+  }
+}
+
+</style>
+<style>
+
+/* Clickable contact rows */
+.contact-item{
+  text-decoration:none !important;
+  color:inherit !important;
+  cursor:pointer;
+}
+.contact-item:hover strong,
+.contact-item:hover p{
+  color:var(--primary) !important;
+}
+.contact-item:hover .contact-icon{
+  color:var(--primary) !important;
+}
+
+</style>
+</head>
+
+<body class="dark">
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#home" aria-label="AMRZ Shop">
+      <img class="logo-image" src="amrz-logo.png" alt="AMRZ Shop">
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">خانه</a>
+      <a href="#popular">محبوب‌ترین‌ها</a>
+      <a href="#products">محصولات</a>
+      <a href="#about">درباره ما</a>
+      <a href="#contact">تماس</a><a class="owner-nav-link" href="owner.html"> درباره من </a></nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="تغییر حالت">☾</button>
+      <button class="icon-btn cart-btn" id="cartBtn" aria-label="سبد خرید">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- HERO -->
+<main id="home">
+<section class="hero">
+
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">lior shop</span>
+      <h1>انتخابی ساده،<br><span class="gradient">زندگی‌ای زیباتر.</span></h1>
+      <p class="hero-text">
+       اینجا دقیقا همون چیزی رو میگیری گه میخوای :))
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#products">مشاهده محصولات ←</a>
+        <a class="btn btn-secondary" href="#popular">محبوب‌ترین‌ها</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal delay-2">
+      <div class="product-orb"></div>
+      <div class="visual-label">مینیمال • مدرن • کاربردی</div>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR -->
+<section class="section" id="popular">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">انتخاب کاربران</span>
+        <h2>محصولات محبوب</h2>
+      </div>
+      <p>چند انتخاب پرطرفدار از مجموعه lior Shop ؛ محصولاتی با تمرکز بر کیفیت، کاربرد و طراح.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <article class="product-card reveal">
+        <div class="product-img">
+          <span class="badge">پرفروش</span>
+          <div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>هدفون lior Shop </h3>
+          <p>صدای شفاف با طراحی مینیمال و سبک.</p>
+          <div class="price-row">
+            <span class="price">۲,۴۹۰,۰۰۰ <small>تومان</small></span>
+            <button class="add-btn" data-name="هدفون AMRZ Shop Air" data-price="2490000">+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal delay-1">
+        <div class="product-img teal">
+          <span class="badge">محبوب</span>
+          <div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>چراغ رومیزی Aura</h3>
+          <p>نورپردازی مدرن برای میز کار و مطالعه.</p>
+          <div class="price-row">
+            <span class="price">۱,۲۹۰,۰۰۰ <small>تومان</small></span>
+            <button class="add-btn" data-name="چراغ رومیزی Aura" data-price="1290000">+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal delay-2">
+        <div class="product-img orange">
+          <span class="badge">پیشنهاد</span>
+          <div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>ماگ سرامیکی Mono</h3>
+          <p>طراحی ساده برای استفاده روزمره.</p>
+          <div class="price-row">
+            <span class="price">۳۹۰,۰۰۰ <small>تومان</small></span>
+            <button class="add-btn" data-name="ماگ سرامیکی Mono" data-price="390000">+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal delay-3">
+        <div class="product-img pink">
+          <span class="badge">جدید</span>
+          <div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>کیف روزمره Nova</h3>
+          <p>سبک، کاربردی و مناسب استفاده شهری.</p>
+          <div class="price-row">
+            <span class="price">۹۹۰,۰۰۰ <small>تومان</small></span>
+            <button class="add-btn" data-name="کیف روزمره Nova" data-price="990000">+</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">چرا AMRZ Shop؟</span>
+        <h2>تجربه‌ای ساده و متفاوت</h2>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature reveal">
+        <div class="feature-icon">✦</div>
+        <h3>طراحی مینیمال</h3>
+        <p>محصولات و تجربه‌ای که بدون شلوغی، روی چیزهای مهم تمرکز می‌کنند.</p>
+      </div>
+      <div class="feature reveal delay-1">
+        <div class="feature-icon">✓</div>
+        <h3>انتخاب باکیفیت</h3>
+        <p>تمرکز روی محصولاتی که برای استفاده روزمره انتخاب شده‌اند.</p>
+      </div>
+      <div class="feature reveal delay-2">
+        <div class="feature-icon">⚡</div>
+        <h3>تجربه سریع</h3>
+        <p>دسترسی آسان به محصولات و یک رابط کاربری سبک و پاسخ‌گو.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL PRODUCTS -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">مجموعه lior shop</span>
+        <h2>همه محصولات</h2>
+      </div>
+      <p>محصولات بیشتری برای انتخاب؛ این بخش کاملاً استاتیک است و بعداً می‌تواند به بک‌اند متصل شود.</p>
+    </div>
+
+    <div class="filter-row">
+      <button class="filter active">همه</button>
+      <button class="filter">دیجیتال</button>
+      <button class="filter">خانه</button>
+      <button class="filter">اکسسوری</button>
+    </div>
+
+    <div class="products-grid">
+
+      <article class="product-card">
+        <div class="product-img">
+          <span class="badge">جدید</span><div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3> lior shop Air</h3><p>شفاف و طراحی سبک.</p>
+          <div class="price-row"><span class="price">۲,۴۹۰,۰۰۰ <small>تومان</small></span><button class="add-btn" data-name="هدفون AMRZ Shop Air" data-price="2490000">+</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img teal">
+          <span class="badge">محبوب</span><div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>چراغ رومیزی Aura</h3><p>نورپردازی مدرن و ساده.</p>
+          <div class="price-row"><span class="price">۱,۲۹۰,۰۰۰ <small>تومان</small></span><button class="add-btn" data-name="چراغ رومیزی Aura" data-price="1290000">+</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img orange">
+          <span class="badge">پرفروش</span><div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>ماگ سرامیکی Mono</h3><p>ساده، کاربردی و روزمره.</p>
+          <div class="price-row"><span class="price">۳۹۰,۰۰۰ <small>تومان</small></span><button class="add-btn" data-name="ماگ سرامیکی Mono" data-price="390000">+</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img pink">
+          <span class="badge">جدید</span><div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>کیف روزمره </h3><p>سبک و مناسب استفاده شهری.</p>
+          <div class="price-row"><span class="price">۹۹۰,۰۰۰ <small>تومان</small></span><button class="add-btn" data-name="کیف روزمره Nova" data-price="990000">+</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img teal">
+          <span class="badge">محبوب</span><div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>کیبورد مکانیکی Mini</h3><p>جمع‌وجور و مناسب میزهای مینیمال.</p>
+          <div class="price-row"><span class="price">۳,۲۰۰,۰۰۰ <small>تومان</small></span><button class="add-btn" data-name="کیبورد مکانیکی Mini" data-price="3200000">+</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img orange">
+          <span class="badge">پیشنهاد</span><div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>پایه لپ‌تاپ Flex</h3><p>زاویه مناسب برای میز کار.</p>
+          <div class="price-row"><span class="price">۷۹۰,۰۰۰ <small>تومان</small></span><button class="add-btn" data-name="پایه لپ‌تاپ Flex" data-price="790000">+</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img pink">
+          <span class="badge">جدید</span><div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>ساعت رومیزی Dot</h3><p>نمایشگر ساده با ظاهر مدرن.</p>
+          <div class="price-row"><span class="price">۸۹۰,۰۰۰ <small>تومان</small></span><button class="add-btn" data-name="ساعت رومیزی Dot" data-price="890000">+</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img">
+          <span class="badge">محبوب</span><div class="shape"></div>
+        </div>
+        <div class="product-body">
+          <h3>بطری حرارتی One</h3><p>مقاوم و مناسب استفاده روزانه.</p>
+          <div class="price-row"><span class="price">۶۵۰,۰۰۰ <small>تومان</small></span><button class="add-btn" data-name="بطری حرارتی One" data-price="650000">+</button></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <div class="cta-content">
+        <div>
+          <h2>محصول مورد علاقه‌ات را پیدا کن.</h2>
+          <p>سادگی را انتخاب کن؛ جزئیات را lior shop انجام می‌دهد.</p>
+        </div>
+        <a class="btn btn-primary" href="#products">شروع خرید ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">در تماس باشیم</span>
+        <h2>ارتباط با lior shop</h2>
+      </div>
+      <p>برای ارتباط با ما از راه‌های زیر استفاده کنید.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h2>راه‌های ارتباطی</h2>
+
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div><strong>ایمیل</strong><p>amrezalou@gmail.com</p></div>
+        </div>
+
+        <a class="contact-item" href="https://instagram.com/wmirwt" target="_blank" rel="noopener" aria-label="Instagram">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.4" cy="6.7" r="1.1" fill="currentColor"/>
+            </svg>
+          </div>
+          <div><strong>Instagram</strong><p>@wmirwt</p></div>
+        </a>
+
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+<path fill="currentColor" d="M21.7 3.3 18.6 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.6l-5-1.6c-1.1-.3-1.1-1.1.2-1.6L20.6 2c.9-.3 1.7.2 1.1 1.3Z"/>
+</svg></div>
+          <div><strong>تلگرام</strong><p>@liorshop</p></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">⌖</div>
+          <div><strong>آدرس</strong><p>ایران، تهران</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer">
+    <div>© ۱۴۰۵ lior shop — فروشگاه آنلاین استاتیک</div>
+    <div class="social">
+      <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+<path fill="currentColor" d="M21.7 3.3 18.6 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.6l-5-1.6c-1.1-.3-1.1-1.1.2-1.6L20.6 2c.9-.3 1.7.2 1.1 1.3Z"/>
+</svg></a>
+      <a href="https://instagram.com/wmirwt" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="17.4" cy="6.7" r="1.1" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="mailto:amrezalou@gmail.com" aria-label="Email">✉</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart-panel" id="cartPanel">
+  <div class="cart-head">
+    <h2>سبد خرید</h2>
+    <button class="icon-btn" id="closeCart">×</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="empty-cart">سبد خرید شما خالی است.</div>
+  </div>
+  <div class="cart-footer">
+    <div class="total">
+      <span>مجموع</span>
+      <span id="cartTotal">۰ تومان</span>
+    </div>
+    <button class="btn btn-primary" style="width:100%" onclick="alert('پرداخت در نسخه استاتیک فعال نیست.')">ادامه پرداخت</button>
+  </div>
+</aside>
+
+<script>
+/* =========================
+   DARK / LIGHT MODE
+========================= */
+const themeBtn = document.getElementById("themeBtn");
+const savedTheme = localStorage.getItem("nova-theme");
+
+if(savedTheme === "dark"){
+  document.body.classList.add("dark");
+  themeBtn.textContent = "☀";
+}
+
+themeBtn.addEventListener("click",()=>{
+  document.body.classList.toggle("dark");
+  const dark = document.body.classList.contains("dark");
+  localStorage.setItem("nova-theme",dark ? "dark" : "light");
+  themeBtn.textContent = dark ? "☀" : "☾";
+});
+
+/* =========================
+   CART
+========================= */
+const cartBtn = document.getElementById("cartBtn");
+const cartPanel = document.getElementById("cartPanel");
+const overlay = document.getElementById("overlay");
+const closeCart = document.getElementById("closeCart");
+const cartItems = document.getElementById("cartItems");
+const cartCount = document.getElementById("cartCount");
+const cartTotal = document.getElementById("cartTotal");
+
+let cart = [];
+
+function openCart(){
+  cartPanel.classList.add("open");
+  overlay.classList.add("open");
+}
+function closeCartPanel(){
+  cartPanel.classList.remove("open");
+  overlay.classList.remove("open");
+}
+
+cartBtn.addEventListener("click",openCart);
+closeCart.addEventListener("click",closeCartPanel);
+overlay.addEventListener("click",closeCartPanel);
+
+document.querySelectorAll(".add-btn").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const name = button.dataset.name;
+    const price = Number(button.dataset.price);
+    cart.push({name,price});
+    updateCart();
+    openCart();
+  });
+});
+
+function formatPrice(num){
+  return new Intl.NumberFormat("fa-IR").format(num);
+}
+
+function updateCart(){
+  cartCount.textContent = new Intl.NumberFormat("fa-IR").format(cart.length);
+
+  if(cart.length === 0){
+    cartItems.innerHTML = '<div class="empty-cart">سبد خرید شما خالی است.</div>';
+    cartTotal.textContent = "۰ تومان";
+    return;
+  }
+
+  cartItems.innerHTML = cart.map((item,index)=>`
+    <div class="cart-item">
+      <div class="cart-thumb"></div>
+      <div class="cart-item-info">
+        <strong>${item.name}</strong>
+        <small>${formatPrice(item.price)} تومان</small>
+      </div>
+      <button class="remove-item" onclick="removeItem(${index})">حذف</button>
+    </div>
+  `).join("");
+
+  const total = cart.reduce((sum,item)=>sum + item.price,0);
+  cartTotal.textContent = formatPrice(total) + " تومان";
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  updateCart();
+}
+</script>
+
+</body>
+</html>
